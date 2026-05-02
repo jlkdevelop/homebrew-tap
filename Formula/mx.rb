@@ -1,28 +1,28 @@
 class Mx < Formula
   desc "Modern open-source scripting language for building web apps and APIs"
   homepage "https://mxscript.com"
-  version "0.20.0"
+  version "0.37.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.20.0/mx_0.20.0_darwin_arm64.tar.gz"
-      sha256 "e9d6fa924509f4bb55286bc4a6205b04750dfa90e0021064f98e66d9b67e02ad"
+      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.37.0/mx_0.37.0_darwin_arm64.tar.gz"
+      sha256 "98bcf8b0f15295fb68cec299ad89c92f60c0c393ace54d4fda075b6399342959"
     end
     on_intel do
-      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.20.0/mx_0.20.0_darwin_amd64.tar.gz"
-      sha256 "e3edaefb46da76a9e03d602e460520a731d42399b11fdeaa80352dc333a0e447"
+      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.37.0/mx_0.37.0_darwin_amd64.tar.gz"
+      sha256 "66b4aa838b0efe1f25dbe759f170c4b63b9e9d0223b53b0b95ddf5d87dd7c493"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.20.0/mx_0.20.0_linux_arm64.tar.gz"
-      sha256 "e1b28adb9df889f51ab47e74fbc6a4b77e24de3563d8aaa8aaa3ad64b460717d"
+      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.37.0/mx_0.37.0_linux_arm64.tar.gz"
+      sha256 "dc13d2e359dd90e847c4120a5824954f2f5c64a4724ef4d1ef96e6eeccf58292"
     end
     on_intel do
-      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.20.0/mx_0.20.0_linux_amd64.tar.gz"
-      sha256 "fb91ff0a474a573841561263af1e32c21f01d0c72a69d0f4e54008d124a4a894"
+      url "https://github.com/jlkdevelop/mxscript/releases/download/v0.37.0/mx_0.37.0_linux_amd64.tar.gz"
+      sha256 "f1eb42df0c163d765c0a905335adfda78003b7cae835bb1479f40dbbb740e2fa"
     end
   end
 
@@ -32,7 +32,7 @@ class Mx < Formula
 
   test do
     # GoReleaser builds strip the leading "v", so the binary prints
-    # "MX Script 0.14.0" (no v) — match on the bare version number.
+    # "MX Script 0.37.0" (no v) — match on the bare version number.
     output = shell_output("#{bin}/mx version").chomp
     assert_match "MX Script #{version}", output
   end

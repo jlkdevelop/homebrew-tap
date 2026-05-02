@@ -31,7 +31,9 @@ class Mx < Formula
   end
 
   test do
+    # GoReleaser builds strip the leading "v", so the binary prints
+    # "MX Script 0.14.0" (no v) — match on the bare version number.
     output = shell_output("#{bin}/mx version").chomp
-    assert_match "MX Script v#{version}", output
+    assert_match "MX Script #{version}", output
   end
 end
